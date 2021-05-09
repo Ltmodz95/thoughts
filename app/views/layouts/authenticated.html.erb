@@ -11,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="authenticated-layout">
+      <header></header>
+      <main>
+        <%= yield %>
+      </main>
+    </div>
+    
   </body>
 </html>
