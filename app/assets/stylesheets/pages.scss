@@ -1,0 +1,71 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@font-face {
+  font-family: 'Quesha';
+  src: url('Quesha.ttf');
+}
+
+.home-video-wrapper {
+
+  height: 100vh;
+  display: flex;
+  .home-video {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    z-index: -2;
+  }
+  .home-video-overlay{
+    font-family: "Quesha";
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    button{
+      font-family: inherit;
+      color: #fff;
+      background: #5EB4DD;
+      font-size: 24px;
+      border: none;
+      outline: none;
+      padding: 10px 15px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      &:hover{
+        animation: breathing 5s ease-out infinite normal
+      };
+    }
+
+    h1{
+      color: #fff;
+      font-size: 46px;
+      letter-spacing: 1px;
+      word-spacing: 2px;
+    }
+
+    @keyframes breathing {
+      0% {
+        transform: scale(0.9);
+      }
+    
+      25% {
+        transform: scale(1);
+      }
+    
+      60% {
+        transform: scale(0.9);
+      }
+    
+      100% {
+        transform: scale(0.9);
+      }
+    }
+    
+  }
+}
