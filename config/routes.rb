@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'pages#home'
+  get '/home' => 'posts#index', :as => :user_root
+
+  resource :posts do
+    get '/my_posts' => 'posts#my_posts'
+  end
 end

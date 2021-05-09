@@ -1,3 +1,47 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@font-face {
+  font-family: 'Itim';
+  src: url('Itim-Regular.ttf');
+}
+.post-item{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background:#fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: 'Itim';
+  .post-creator{
+    display:flex;
+    .post-creator-avatar{
+      width: 50px;
+      height: 50px;
+      background:#5EB4DD;
+      border-radius: 50%;
+      display: flex;
+      color: #fff;
+      align-items: center;
+      justify-content:center;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .post-creator-details{
+      display: flex;
+      flex-direction:column;
+      margin-left: 10px;
+      .post-creator-name{
+        font-size: 18px;
+      }
+      .post-creation-date{
+        color: #65676B;
+        font-size: 14px;
+      }
+    }
+  }
+  .post-body{
+    font-size: 16px;
+  }
+}

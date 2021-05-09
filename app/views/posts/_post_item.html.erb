@@ -1,0 +1,16 @@
+<article class="post-item">
+  <div class="post-creator">
+    <div class="post-creator-avatar">
+      <%= post.user.first_name[0..1] %>
+    </div>
+    <div class="post-creator-details">
+     <span class="post-creator-name"> <%= post.user.first_name %> </span>
+     <span class="post-creation-date"> <%= post.created_at.to_formatted_s(:short) %> </span>
+    </div>
+  </div>
+  <div class="post-body">
+  <p><%= sanitize post.body%></p>
+  </div>
+  
+</article>
+
