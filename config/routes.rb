@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/home' => 'posts#index', :as => :user_root
 
   resource :posts do
+    resource :comments
     get '/my_posts' => 'posts#my_posts'
   end
 end

@@ -11,6 +11,9 @@
   <div class="post-body">
   <p><%= sanitize post.body%></p>
   </div>
+  <div class="post-comments-count">
+    <p><%= "#{post.comments.count} Comments"%> </p>
+  </div>
   
 </article>
 
