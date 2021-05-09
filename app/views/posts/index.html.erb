@@ -1,3 +1,4 @@
+<%= render partial: "new_post_item" %>
 <% @posts.each do |post|%>
 <%= render partial: "post_item", locals: {post: post} %>
 <%end%>

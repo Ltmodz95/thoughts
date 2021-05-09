@@ -1,0 +1,13 @@
+<div class="new-post-item post-card"> 
+  <div class="post-creator">
+    <div class="post-creator-avatar">
+      <%= current_user.first_name[0..1] %>
+    </div>
+  </div>
+  <div class="new-post-form-container">
+    <%= form_with model: Post.new do |form| %>
+        <%= form.text_field :body, placeholder: 'Tell me you thoughts' %>
+        <%= form.submit '', class: 'create-post-button'%>
+    <% end %>
+  </div>
+</div>

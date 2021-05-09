@@ -5,15 +5,7 @@
   font-family: 'Itim';
   src: url('Itim-Regular.ttf');
 }
-.post-item{
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background:#fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  margin-bottom: 20px;
-  font-family: 'Itim';
+.post-item, .new-post-item{
   .post-creator{
     display:flex;
     .post-creator-avatar{
@@ -44,4 +36,45 @@
   .post-body{
     font-size: 16px;
   }
+}
+.new-post-item{
+  flex-direction: row !important;
+  .new-post-form-container{
+    display:flex;
+    flex: 1;
+    form{
+      display: flex;
+      flex: 1;
+      input[type="text"]{
+        flex: 1;
+        margin: 0px 20px;
+        background-color:#f0f2f5;
+        border: none;
+        border-radius: 10px;
+        padding: 8px;
+        outline: none;
+      }
+      input[type="submit"]{
+        background:#5EB4DD;
+        border-radius: 50%;
+        border: none;
+        width:50px;
+        cursor: pointer;
+        background-image: url('thinking.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 50%;
+      }
+    }
+  }
+}
+.post-card{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background:#fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: 'Itim';
 }
