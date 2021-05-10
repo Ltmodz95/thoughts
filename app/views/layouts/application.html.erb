@@ -11,6 +11,14 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  <div class="home-video-wrapper">
+    <%= video_tag "thoughts_background.mp4",muted: :muted, autoplay: :autoplay, loop: :loop, class: "home-video" %>
+      <div class="home-video-overlay">
+        <%= yield %>
+      </div>
+  </div>
+
+
   </body>
 </html>
