@@ -1,7 +1,14 @@
+<div class="logo">
+ <span>Thoughts </span>
+</div>
+
 <nav>
   <ul>
     <li>
-    <%= link_to 'my posts', %>
+    <%= link_to 'my posts', my_posts_path  %>
+    </li>
+    <li>
+      <%= link_to 'sign out', destroy_user_session_path, method: :delete  %>
     </li>
   <ul>
 </nav>

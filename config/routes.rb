@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get '/home' => 'posts#index', :as => :user_root
-
+  get 'my_posts' => 'posts#my_posts'
   resources :posts do
+
     resources :comments do
       resources :reactions
     end

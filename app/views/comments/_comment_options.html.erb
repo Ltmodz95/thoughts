@@ -1,4 +1,5 @@
 
+<%if current_user == comment.user%>
 <div class="comment-options">
 <button data-comment-id= <%= comment.id %> class="update-resource update-comment"></button>
 <button data-hide-comment-id= <%= comment.id %> class="hide-resource hide-comment-update"></button>
@@ -8,3 +9,4 @@
                   class: 'delete-resource',
                   tooltip: 'Delete this comment'%>
 </div>
+<%end%>

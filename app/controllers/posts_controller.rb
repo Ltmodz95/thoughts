@@ -22,7 +22,8 @@ class PostsController < ApplicationController
   end
 
   def my_posts
-    @posts = current_user.posts
+    @posts = Post.includes(:user, comments: %i[reactions user]).where(user: current_user)
+    render action: "index"
   end
 
   def edit; end
