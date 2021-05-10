@@ -8,4 +8,7 @@
     <span class="commenter"> <%= comment.user.name %></span>
     <span class="comment-text"><%= comment.body %></span>
   </div>
+  <div class="comment-options-container">
+    <%= render partial: "comments/comment_options", locals:{comment: comment} %>
+  </div>
 </div>
