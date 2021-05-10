@@ -1,11 +1,11 @@
 <%if reaction.react_type == 'heart'%>
   <span class="reaction-item heart"></span>
-    <%= link_to '', post_comment_reaction_path(reaction.comment.post, reaction.comment,reaction),
-                  method: :delete,
-                  data: { confirm: "Are you sure you want to delete this reaction?" },
-                  class: 'delete-resource'%>
 <%elsif reaction.react_type == 'smile' %>
  <span class="reaction-item smile"></span>
 <%else %>
  <span class="reaction-item like"></span>
 <%end%>
+<%= link_to '', post_comment_reaction_path(reaction.comment.post, reaction.comment,reaction),
+                  method: :delete,
+                  data: { confirm: "Are you sure you want to delete this reaction?" },
+                  class: 'delete-resource'%>
