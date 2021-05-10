@@ -1,3 +1,79 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@font-face {
+  font-family: 'Itim';
+  src: url('Itim-Regular.ttf');
+}
+
+.comment-card{
+  display: flex;
+  padding: 20px 0px;
+  background:#fff;
+  margin-bottom: 20px;
+  font-family: 'Itim';
+  align-items: center;
+}
+
+.new-comment-item{
+  .comment-creator{
+    display: flex;
+    .comment-creator-avatar{
+      width: 40px;
+      height: 40px;
+      background:#5EB4DD;
+      border-radius: 50%;
+      display: flex;
+      color: #fff;
+      align-items: center;
+      justify-content:center;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+  .new-comment-form-container{
+    display:flex;
+    flex: 1;
+    form{
+      display: flex;
+      flex: 1;
+      input[type="text"]{
+        flex: 1;
+        margin: 0px 20px;
+        background:#f0f2f5;
+        border: none;
+        border-radius: 10px;
+        padding: 8px;
+        outline: none;
+      }
+      input[type="submit"]{
+        background:#5EB4DD;
+        border-radius: 50%;
+        border: none;
+        width:50px;
+        cursor: pointer;
+        background-image: url('speech-bubble.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 50%;
+      }
+    }
+  }
+}
+.comment-body{
+  display:flex;
+  flex-direction: column;
+  flex: 1;
+  background:#f0f2f5;
+  padding: 5px 10px;
+  margin: 0px 10px;
+  border-radius: 10px;
+  .commenter{
+    font-weight: bold;
+  }
+  .comment-text{
+    margin-top: 5px;
+    font-size: 15px;
+  }
+}

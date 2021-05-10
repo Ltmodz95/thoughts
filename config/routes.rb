@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get '/home' => 'posts#index', :as => :user_root
 
-  resource :posts do
-    resource :comments
-    get '/my_posts' => 'posts#my_posts'
+  resources :posts do
+    resources :comments
   end
 end

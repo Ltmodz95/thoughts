@@ -1,0 +1,13 @@
+<div class="new-comment-item comment-card"> 
+  <div class="comment-creator">
+    <div class="comment-creator-avatar">
+      <%= current_user.first_name[0..1] %>
+    </div>
+  </div>
+  <div class="new-comment-form-container">
+    <%= form_with model: [ post, post.comments.build ] do |form| %>
+        <%= form.text_field :body, placeholder: 'What do you have to share' %>
+        <%= form.submit '', class: 'create-comment-button'%>
+    <% end %>
+  </div>
+</div>

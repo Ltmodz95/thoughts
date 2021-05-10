@@ -1,0 +1,11 @@
+<div class="new-comment-item comment-card"> 
+  <div class="comment-creator">
+    <div class="comment-creator-avatar">
+      <%= comment.user.first_name[0..1] %>
+    </div>
+  </div>
+  <div class="comment-body">
+    <span class="commenter"> <%= comment.user.name %></span>
+    <span class="comment-text"><%= comment.body %></span>
+  </div>
+</div>

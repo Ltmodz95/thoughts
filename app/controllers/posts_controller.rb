@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   layout 'authenticated'
 
   def index
-    @posts = Post.includes(:user).all
+    @posts = Post.includes(:user,:comments).all
   end
 
   def new

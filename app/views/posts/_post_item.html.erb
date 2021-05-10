@@ -14,6 +14,10 @@
   <div class="post-comments-count">
     <p><%= "#{post.comments.count} Comments"%> </p>
   </div>
+  <% post.comments.each do |comment|%>
+    <%= render 'comments/comment_item', comment: comment %>
+  <% end %>
+  <%= render 'comments/new_comment', post: post%>
   
 </article>
 
