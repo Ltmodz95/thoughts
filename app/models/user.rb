@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts
   has_many :comments
-
+  has_many :reactions
 
   def name
     "#{first_name} #{last_name}"

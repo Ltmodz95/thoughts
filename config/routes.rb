@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/home' => 'posts#index', :as => :user_root
 
   resources :posts do
-    resources :comments
+    resources :comments do
+      resources :reactions
+    end
   end
 end

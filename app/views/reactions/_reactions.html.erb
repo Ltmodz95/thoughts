@@ -1,0 +1,15 @@
+<div class="reactions">
+  <%= form_with model: [ comment.post, comment, comment.reactions.build] do |form| %>
+      <%= form.hidden_field :react_type, value: 'heart'%>
+      <%= form.submit '', class: 'reaction-item heart'%>
+  <% end %>
+  <%= form_with model: [ comment.post, comment,  comment.reactions.build] do |form| %>
+      <%= form.hidden_field :react_type, value: 'smile'%>
+      <%= form.submit '', class: 'reaction-item smile'%>
+  <% end %>
+  <%= form_with model: [ comment.post, comment,  comment.reactions.build ] do |form| %>
+      <%= form.hidden_field :react_type, value: 'like'%>
+      <%= form.submit '', class: 'reaction-item like'%>
+  <% end %>
+
+</div>

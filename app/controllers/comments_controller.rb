@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
-  before_action :set_post, only:[:create]
-  before_action :set_comment, only:[:destroy,:update]
+  before_action :set_post, only: [:create]
+  before_action :set_comment, only: %i[destroy update]
   def create
-    @comment = @post.comments.create(comment_params.merge({user_id: current_user.id}))
+    @comment = @post.comments.create(comment_params.merge({ user_id: current_user.id }))
     redirect_to '/home'
   end
 
@@ -17,6 +19,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:body)
   end

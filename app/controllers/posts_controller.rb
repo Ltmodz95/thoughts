@@ -2,9 +2,9 @@
 
 class PostsController < ApplicationController
   layout 'authenticated'
-  before_action :set_post, only:[:destroy,:edit,:update,:show]
+  before_action :set_post, only: %i[destroy edit update show]
   def index
-    @posts = Post.includes(:user,:comments).all
+    @posts = Post.includes(:user, comments: %i[reactions user]).all
   end
 
   def new
@@ -25,12 +25,9 @@ class PostsController < ApplicationController
     @posts = current_user.posts
   end
 
-  def edit
-  end
+  def edit; end
 
-  def show
-
-  end
+  def show; end
 
   def update
     @post.update(post_params)
