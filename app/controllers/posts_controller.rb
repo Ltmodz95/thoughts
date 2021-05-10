@@ -29,11 +29,12 @@ class PostsController < ApplicationController
   end
 
   def show
+
   end
 
   def update
     @post.update(post_params)
-    redirect_to '/home'
+    redirect_to @post
   end
 
   def destroy
