@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   layout 'authenticated'
-  before_action :set_post, only:[:destroy]
+  before_action :set_post, only:[:destroy,:edit,:update,:show]
   def index
     @posts = Post.includes(:user,:comments).all
   end
@@ -23,6 +23,17 @@ class PostsController < ApplicationController
 
   def my_posts
     @posts = current_user.posts
+  end
+
+  def edit
+  end
+
+  def show
+  end
+
+  def update
+    @post.update(post_params)
+    redirect_to '/home'
   end
 
   def destroy
