@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   layout 'authenticated'
-
+  before_action :set_post, only:[:destroy]
   def index
     @posts = Post.includes(:user,:comments).all
   end
@@ -14,10 +14,10 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.create(post_params)
     if @post.save
-      flash[:notice] = 'bravo'
+      flash[:notice] = 'Post added'
       redirect_to user_root_url
     else
-      flash[:alert] = 'kos omak'
+      flash[:alert] = 'error adding post'
     end
   end
 
@@ -25,9 +25,19 @@ class PostsController < ApplicationController
     @posts = current_user.posts
   end
 
+  def destroy
+    @post.destroy
+    flash[:notice] = 'Post Removed'
+    redirect_to '/home'
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:body)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

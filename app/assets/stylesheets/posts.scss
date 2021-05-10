@@ -85,3 +85,12 @@
   justify-content:flex-end;
   border-bottom: 1px solid #a9a9aa;
 }
+
+.post-creator-options{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .post-options{
+    display: flex;
+  }
+}
