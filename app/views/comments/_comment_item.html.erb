@@ -1,12 +1,20 @@
+<%= javascript_pack_tag 'update-comment', defer: 'defer' %>
 <div class="new-comment-item comment-card"> 
   <div class="comment-creator">
     <div class="comment-creator-avatar">
       <%= comment.user.first_name[0..1] %>
     </div>
   </div>
-  <div class="comment-body">
+  <div data-comment-body= <%= comment.id%> class="comment-body">
     <span class="commenter"> <%= comment.user.name %></span>
     <span class="comment-text"><%= comment.body %></span>
+  </div>
+  <div data-form-comment= <%= comment.id%> class="edit-comment-container">
+  <span class="commenter"> <%= comment.user.name %></span>
+    <%= form_with model: [ comment.post, comment ] do |form| %>
+        <%= form.text_field :body, placeholder: 'What do you have to share' %>
+        <%= form.submit '', class: 'create-comment-button'%>
+    <% end %>
   </div>
   <div class="comment-options-container">
     <%= render partial: "comments/comment_options", locals:{comment: comment} %>

@@ -68,7 +68,7 @@
     bottom:0px;
   }
 }
-.comment-body{
+.comment-body,.edit-comment-container{
   display:flex;
   flex-direction: column;
   flex: 1;
@@ -101,4 +101,37 @@
   background-size: 90%;
   height:20px;
   width:20px;
+}
+//edit comments
+.edit-comment-container{
+  display:none;
+  form{
+    display: flex;
+    flex: 1;
+    margin-bottom: 30px;
+    input[type="text"]{
+      flex: 1;
+      margin-right: 10px;
+      background:#fff;
+      border: none;
+      border-radius: 10px;
+      padding: 8px;
+      outline: none;
+    }
+    input[type="submit"]{
+      background:#5EB4DD;
+      border-radius: 50%;
+      border: none;
+      width:50px;
+      height: 50px;
+      cursor: pointer;
+      background-image: url('update-arrows.svg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 50%;
+    }
+  }
+}
+.hide-comment-update{
+  display: none;
 }
