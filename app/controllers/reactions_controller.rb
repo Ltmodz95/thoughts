@@ -8,7 +8,7 @@ class ReactionsController < ApplicationController
     if @reaction.save
       flash[:notice] = 'Thank you for your reaction'
     else
-      flash[:alert] = 'something went wrong'
+      flash[:alert] = @reaction.errors.full_messages
     end
     redirect_to '/home'
   end

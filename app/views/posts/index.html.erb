@@ -2,3 +2,4 @@
 <% @posts.each do |post|%>
 <%= render partial: "post_item", locals: {post: post} %>
 <%end%>
+<%= render partial: "shared/users_posts", locals: {users: @users}%>

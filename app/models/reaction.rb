@@ -3,8 +3,6 @@
 class Reaction < ApplicationRecord
   belongs_to :user
   belongs_to :comment
-
-  validates_uniqueness_of :user_id, :comment_id
-
+  validates :user, uniqueness: { scope: :comment, message: 'You can have one reaction per comment' }
   enum react_type: %i[smile like heart]
 end

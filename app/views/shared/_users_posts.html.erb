@@ -1,0 +1,7 @@
+<div class="users-posts-collection">
+  <h4>Users Posts:</h4>
+  <% users.each do |user| %>
+    <%= render partial: 'shared/user_item', locals: {user: user}%>
+  <%end%>
+  
+</div>

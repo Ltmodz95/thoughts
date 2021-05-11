@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,46 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_510_045_428) do
-  create_table 'comments', charset: 'utf8mb4', force: :cascade do |t|
-    t.string 'body'
-    t.bigint 'post_id'
-    t.bigint 'user_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['post_id'], name: 'index_comments_on_post_id'
-    t.index ['user_id'], name: 'index_comments_on_user_id'
+ActiveRecord::Schema.define(version: 2021_05_10_232511) do
+
+  create_table "comments", charset: "utf8mb4", force: :cascade do |t|
+    t.string "body"
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table 'posts', charset: 'utf8mb4', force: :cascade do |t|
-    t.text 'body'
-    t.bigint 'user_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['user_id'], name: 'index_posts_on_user_id'
+  create_table "posts", charset: "utf8mb4", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table 'reactions', charset: 'utf8mb4', force: :cascade do |t|
-    t.integer 'react_type'
-    t.bigint 'comment_id'
-    t.bigint 'user_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['comment_id'], name: 'index_reactions_on_comment_id'
-    t.index ['user_id'], name: 'index_reactions_on_user_id'
+  create_table "reactions", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "react_type"
+    t.bigint "comment_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comment_id"], name: "index_reactions_on_comment_id"
+    t.index ["user_id", "comment_id"], name: "index_reactions_on_user_id_and_comment_id", unique: true
+    t.index ["user_id"], name: "index_reactions_on_user_id"
   end
 
-  create_table 'users', charset: 'utf8mb4', force: :cascade do |t|
-    t.string 'first_name'
-    t.string 'last_name'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end

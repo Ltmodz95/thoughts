@@ -6,6 +6,7 @@
   src: url('Itim-Regular.ttf');
 }
 .post-item, .new-post-item{
+  grid-column: 1/2;
   .post-creator{
     display:flex;
     .post-creator-avatar{
@@ -59,6 +60,7 @@
         border-radius: 50%;
         border: none;
         width:50px;
+        height:50px;
         cursor: pointer;
         background-image: url('thinking.svg');
         background-position: center center;
