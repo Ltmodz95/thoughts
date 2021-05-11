@@ -25,13 +25,13 @@ class PostsController < ApplicationController
   def my_posts
     @posts = Post.includes(:user, comments: %i[reactions user]).where(user: current_user)
     @users = User.includes(:posts).all
-    render action: "index"
+    render action: 'index'
   end
 
   def user_posts
     @posts = Post.includes(:user, comments: %i[reactions user]).where(user: User.find(params[:user_id]))
     @users = User.includes(:posts).all
-    render action: "index"
+    render action: 'index'
   end
 
   def edit; end
