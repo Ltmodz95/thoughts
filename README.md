@@ -1,24 +1,27 @@
-# README
+# Thoughts README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technical Requirements
 
-Things you may want to cover:
+* Ruby Version `ruby-3`
 
-* Ruby version
+* Rails Version`rails 6`
 
-* System dependencies
+## Installing and setting up the project
 
-* Configuration
+1. clone the project on you machine:
+```
+git clone https://github.com/Ltmodz95/thoughts.git
+```
+2. run the following commands:
+```
+bundle install
+rails db:create
+rails db:migrate
+```
+3. run the project
+```
+rails s
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### How to use it:
+Just clear your mind !!
