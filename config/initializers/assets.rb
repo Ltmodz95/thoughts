@@ -11,7 +11,7 @@ Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'fonts
 # Add Yarn node_modules folder to the asset load path.
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'videos')
-Rails.application.config.assets.precompile += %w( thoughts_background.mp4 )
+Rails.application.config.assets.precompile += %w( *.ttf thoughts_background.mp4 *.svg)
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
